@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "HiberG8 - Browser Traffic Safe-Hold",
+  "version": "1.0.0",
+  "description": "Hold all browser traffic on untrusted networks until you review your connection and Green Light it. VPN-confirmation gate. Does not hibernate tabs.",
+  "permissions": ["declarativeNetRequest", "tabs", "downloads", "storage", "notifications"],
+  "background": { "service_worker": "background.js" },
+  "icons": { "16": "icon16.png", "32": "icon32.png", "48": "icon48.png", "128": "icon128.png" },
+  "action": {
+    "default_title": "HiberG8 - Safe-Hold",
+    "default_popup": "popup.html",
+    "default_icon": { "16": "icon16.png", "32": "icon32.png", "48": "icon48.png", "128": "icon128.png" }
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": { "default": "Ctrl+Shift+H", "mac": "MacCtrl+Shift+H" },
+      "description": "Open HiberG8"
+    }
+  },
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'; script-src 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; connect-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'"
+  }
+}

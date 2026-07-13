@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>HiberG8 - traffic held</title>
+<style>
+  :root{--bg:#0d1117;--card:#161b22;--line:#2a3340;--txt:#e6edf3;--muted:#8b97a7;--accent:#39ff14;--bad:#e5534b}
+  @media (prefers-color-scheme: light){:root{--bg:#f6f8fc;--card:#fff;--line:#dde3ec;--txt:#10131a;--muted:#5a6672;--accent:#1e8e3e}}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--bg);color:var(--txt);font:15px/1.5 -apple-system,"Segoe UI",Roboto,Arial,sans-serif;padding:24px}
+  .card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:14px;max-width:540px;width:100%;padding:26px 28px}
+  h1{font-size:19px;margin:.1em 0 .3em}.lock{font-size:26px}
+  p{font-size:13.5px;color:var(--muted)}
+  .host{font-size:13px;color:var(--txt);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin:12px 0;word-break:break-all}
+  .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+  button{border:1px solid var(--line);background:none;color:var(--txt);border-radius:9px;padding:9px 14px;font-size:13px;font-weight:600;cursor:pointer}
+  .caution{background:#ffd400;border:2px solid #111;color:#111;font-weight:800;letter-spacing:.2px}
+  .caution:hover{background:#ffe14d}
+  .vpn{margin-top:12px;border:1px solid var(--line);border-radius:9px;padding:10px 12px}
+  .vpn[hidden]{display:none}
+  .chk{display:flex;gap:8px;align-items:flex-start;font-size:12.5px}
+  .warn{color:var(--bad);font-size:12.5px;margin-top:10px;min-height:1em}
+  .fine{font-size:11.5px;color:var(--muted);margin-top:14px}
+  .secbanner{background:#5a1616;color:#ffdede;border-left:3px solid #e5534b;border-radius:8px;padding:8px 10px;font-size:12px;font-weight:600;margin-bottom:12px}
+  .secbanner[hidden]{display:none}
+</style></head>
+<body>
+  <div class="card">
+    <div class="secbanner" id="secBanner" hidden></div>
+    <div class="lock">🔒</div>
+    <h1>Traffic held by HiberG8</h1>
+    <p>Your browser's outbound traffic is on hold to protect you on the current network. Nothing will be
+       requested from the site until you review your connection and decide it's safe to resume.</p>
+    <div class="host" id="host">the page you were opening</div>
+    <div class="vpn" id="vpnGate" hidden>
+      <label class="chk"><input type="checkbox" id="vpnConfirm"> I confirm my VPN is connected (HiberG8 cannot detect this for you)</label>
+    </div>
+    <div class="row">
+      <button class="caution" id="go">Green Light Browser Traffic</button>
+      <button id="opts">Open HiberG8</button>
+    </div>
+    <div class="warn" id="warn"></div>
+    <p class="fine">A VPN client's own kill-switch protects every app system-wide. HiberG8's hold is a
+       browser-level convenience layer on top of that - not a replacement.</p>
+  </div>
+<script src="hold.js"></script>
+</body></html>

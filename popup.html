@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><link rel="stylesheet" href="popup.css"></head>
+<body>
+  <header><span class="logo">🛡 Hiber<span class="g">G8</span></span></header>
+  <main>
+    <div class="secbanner" id="secBanner" hidden></div>
+    <div class="status"><span class="dot off" id="dot"></span><span id="statusText">Traffic flowing normally</span></div>
+    <div id="heldMsg" class="heldmsg" hidden>🔒 <b>Traffic held.</b> New page loads and downloads are paused until you Green Light traffic.</div>
+    <button class="big suspend" id="toggle">🛡 Suspend traffic</button>
+    <div class="opts">
+      <label class="chk"><input type="checkbox" id="engageStartup"> Engage Safe-Hold automatically at browser startup</label>
+      <label class="chk"><input type="checkbox" id="requireVpn"> Require me to confirm my VPN is connected before I resume traffic</label>
+    </div>
+    <p class="fine">HiberG8 holds the browser's outbound traffic and pauses downloads until you review your
+      connection and decide it's safe to resume. It cannot detect a VPN, so "require VPN" is a manual
+      confirmation. This is a convenience layer on top of your VPN client's own kill-switch, not a replacement.
+      It does not hibernate tabs, read page content, or send any data anywhere.</p>
+    <p class="fine note">🕶 <b>Incognito / InPrivate:</b> HiberG8 does not run in private windows unless you
+      opt it in. To use it there, open your browser's extension details and enable
+      <b>"Allow in Incognito"</b> (Chrome) or <b>"Allow in InPrivate"</b> (Edge). This is your choice, not a default.</p>
+    <div class="family">
+      <p class="famhead">Check out the Hibern8 family of products to reallocate system RAM by hibernating excessive browser tabs.</p>
+      <ul class="famlist">
+        <li>Hibern8 Ctrl+Space</li>
+        <li>Hibern8 Ctrl+Space Lite</li>
+        <li>HiberSpace</li>
+      </ul>
+      <p class="famtag">to save the low hanging fruit.</p>
+    </div>
+  </main>
+<script src="popup.js"></script>
+</body></html>
